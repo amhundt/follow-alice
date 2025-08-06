@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Alikis Portfolio</title>
-	<link rel="stylesheet" href="follow-alice.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+	<link rel="stylesheet" href="style.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -13,12 +14,11 @@
 	<div class="vorher-container">
 		<header>
 			<div class="vorher-left">
-				<img src="images/miladicode.png" alt="logo">
-				<h1><span class="vorher-gradient">Alikis</span>Website</h1>
+				<h1 class="logo"><span class="vorher-gradient">Alikis</span>Website</h1>
 			</div>
 			<!-- Navigation -->
-			<div>
-				<a href="#about">Über mich</a>
+			<div class="navigation">
+				<a href="#about">About</a>
 				<a href="#web">Web</a>
 				<a href="#app">App</a>
 				<a href="#game">Gaming</a>
@@ -27,12 +27,12 @@
 				<a href="#video">Video & Foto</a>
 				<a href="#storytelling">Storytelling</a>
 				<a href="#methods">Methoden</a>
+				<a href="#contact">Kontakt</a>
 			</div>
 			
 			
 			<!-- Socialmedia -->
 			<div class="vorher-box-icons">
-				<p><i class='bx bxl-instagram'></i></p>
 				<p><i class='bx bxl-xing'></i></p>
 				<p><i class='bx bxl-github'></i></p>
 				<p><i class='bx bxl-linkedin-square'></i></p>
@@ -44,11 +44,13 @@
             </div>  
 		</header>
 		
-		<div class="vorher-blackhole-box">
-			<video autoplay loop muted plays-inline src="videos/video3.mp4" type="video/mp4"></video>
-		</div>
 		
 		<section class="vorher-hero">
+		<div class="vorher-blackhole-box">
+			<video class="forest-video" autoplay loop muted playsinline src="videos/video3.mp4" type="video/mp4"></video>
+		</div>
+		
+		
 			<div class="vorher-hero-info autoBlur">
 				<div class="vorher-hero-info-title">Developer Portfolio
 				</div>
@@ -66,6 +68,9 @@
             <div class="vorher-scroll-down"></div>
 		</section>
 	  
+	  
+	  
+	  <!-- About -->
 		<section class="section-projects" id="about">
 			<h2>Über mich</h2>
 			<p>
@@ -85,7 +90,16 @@
 			<div class="section-background">
 				<div class="mySlides1 fade">
 					<div class="project-grid" id="web-grid">
-						<div class="project-card">
+						<div class="project-card"
+							data-title="Platformer Game"
+							data-tags="Unreal Engine, Blueprints, Game Design"
+							data-description="Ein atmosphärisches 2.5D-Jump’n’Run inspiriert von Ori and the Will of the Wisps. Entwickelt mit Fokus auf Licht, Bewegung und Storytelling."
+							data-media='[
+							{"type": "video", "src": "videos/project1.mp4"},
+							{"type": "image", "src": "https://image.stern.de/34997276/t/vB/v1/w1440/r1.7778/-/amazon-gaming-week-2024-august.jpg"},
+							{"type": "image", "src": "https://image.stern.de/34997276/t/vB/v1/w1440/r1.7778/-/amazon-gaming-week-2024-august.jpg"}
+							]'
+							data-link="https://mygame.itch.io/platformer-demo">
 							<h3>Projektname 1</h3>
 							<video class="video-projects" muted loop playsinline>
 								<!-- Fallback für alte Browser -->
@@ -96,7 +110,7 @@
 							<span class="badge">Design</span>
 							<span class="badge">Unreal</span>
 							<span class="badge">Story</span>
-							<span class="link">Link</span>
+							<a class="link" href="default" target="_blank">Download</a>
 						  </div>
 						  <p>Dies ist eine Beschreibung zu deinem Projekt, was es ist, warum du es gemacht hast und was es besonders macht.</p>
 						</div>
@@ -673,49 +687,128 @@
 				<a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
 			</div>
 		</section>
-	</div>
+	
 
 
 
-<!-- Methoden -->
-	<section class="section-projects" >
-		<h2>Methoden</h2>
-		<p>
+<!-- Methoden -->	
+<section id="methods" class="section-projects">
+  <h2>Tools & Methoden</h2>
+  
+					
+	<div class="section-background">
+	  <p>
 		  [Erkläre hier deine Vorgehensweise bei Projekten, z.B. Recherche, agile Methoden, Tools etc.]
 		</p>
-	</section>
-	
-    <section id="methods" class="py-16 bg-neutral-900 reveal scroll-mt-28">
-		<div class="container mx-auto">
-			<h2>Skills & Methoden</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div>
-					<h4 class="text-2xl font-semibold text-brgreenLight mb-4">Design Tools</h4>
-					<ul class="list-disc list-inside text-gray-300">
+		<ul>
 						<li>Adobe CC (PS, AI, ID, AE)</li>
 						<li>Blender, Maya, 3D-Druck</li>
 						<li>Wireframing, UI/UX, Game UI</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="text-2xl font-semibold text-brgreenLight mb-4">Development</h4>
-					<ul class="list-disc list-inside text-gray-300">
+						<li></li>
 						<li>HTML, CSS, JavaScript, C#, C++</li>
 						<li>Unity3D, Unreal Engine, Typo3</li>
 						<li>MySQL, OOP, OpenGL</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="text-2xl font-semibold text-brgreenLight mb-4">Methoden</h4>
-					<ul class="list-disc list-inside text-gray-300">
+						<li></li>
 						<li>Scrum, Agile, Design Thinking</li>
 						<li>Trello, GitLab</li>
 						<li>User Research & Testing</li>
 					</ul>
-				</div>
+					<div class="skills-columns">
+
+		<!-- Design Tools -->
+		<div class="skills-category">
+		  <h3>Design Tools</h3>
+		  <div class="icon-grid">
+			<div class="icon" title="Figma">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
 			</div>
+			<div class="icon" title="Photoshop">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop">
+			</div>
+			<div class="icon" title="Illustrator">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
+			</div>
+			<div class="icon" title="Figma">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+			</div>
+			<div class="icon" title="Photoshop">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop">
+			</div>
+			<div class="icon" title="Illustrator">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
+			</div>
+			<div class="icon" title="Figma">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+			</div>
+			<div class="icon" title="Photoshop">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop">
+			</div>
+			<div class="icon" title="Illustrator">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
+			</div>
+		  </div>
 		</div>
-    </section>
+
+		<!-- Development -->
+		<div class="skills-category">
+		  <h3>Development</h3>
+		  <div class="icon-grid">
+			<div class="icon" title="HTML5">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+			</div>
+			<div class="icon" title="CSS3">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+			</div>
+			<div class="icon" title="Unreal Engine">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal">
+			</div>
+			<div class="icon" title="HTML5">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+			</div>
+			<div class="icon" title="CSS3">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+			</div>
+			<div class="icon" title="Unreal Engine">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal">
+			</div>
+			<div class="icon" title="HTML5">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+			</div>
+			<div class="icon" title="CSS3">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+			</div>
+			<div class="icon" title="Unreal Engine">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal">
+			</div>
+			<div class="icon" title="HTML5">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+			</div>
+			<div class="icon" title="CSS3">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+			</div>
+			<div class="icon" title="Unreal Engine">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal">
+			</div>
+		  </div>
+		</div>
+
+		<!-- Methoden -->
+		<div class="skills-category">
+		  <h3>Methoden</h3>
+		  <div class="method-grid">
+			<span class="method">Scrum</span>
+			<span class="method">Kanban</span>
+			<span class="method">Design Thinking</span>
+			<span class="method">Agile Testing</span>
+			<span class="method">CI/CD</span>
+		  </div>
+		</div>
+
+	  </div>
+  </div>
+  </div>
+</section>
+
 
 
 
@@ -723,17 +816,30 @@
 
 
 <!-- Kontakt -->
-	<section class="section-projects" id="contact">
-		<h2>Kontakt</h2>
+<section class="contact-section" id="contact">
+  <h2>Kontakt</h2>
+  <form class="contact-form" action="https://formspree.io/f/mblkzpan" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Dein Name">
+    </div>
 
-		<form class="contact-form">
-			<input type="text" placeholder="Dein Name">
-			<input type="email" placeholder="Deine E-Mail">
-			<textarea rows="4" placeholder="Deine Nachricht"></textarea>
-			<button type="submit">Nachricht senden</button>
-		</form>
-	</section>
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required placeholder="deine@email.de">
+    </div>
 
+    <div class="form-group">
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" rows="6" required placeholder="Deine Nachricht..."></textarea>
+    </div>
+
+    <button type="submit" class="contact-btn">Absenden</button>
+  </form>
+  
+  <p class="form-success-message" style="display: none;">✅ Vielen Dank! Deine Nachricht wurde gesendet.</p>
+
+</section>
 
 
 
@@ -742,9 +848,11 @@
 
 
 <!-- Footer -->
-	<footer>
-		&	copy; 2025 Aliki
-	</footer>
+	<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>Alice &copy; 2025 - All rights reserved</p>
+  </div>
+</footer>
 
 
 
@@ -753,180 +861,8 @@
 
 
 
-<!-- Lightbox -->
-	<script>
-		let gallery = [];
-		let currentIndex = 0;
-
-		function openLightbox(mediaItems, title, tagsHTML, description) {
-			gallery = mediaItems;
-			currentIndex = 0;
-
-			document.getElementById('lightboxTitle').innerText = title;
-			document.getElementById('lightboxTags').innerHTML = tagsHTML;
-			document.getElementById('lightboxDescription').innerText = description;
-
-			updateMedia();
-			const overlay = document.getElementById('lightboxOverlay');
-			overlay.classList.remove('hidden'); // Sofort sichtbar (aber noch unsichtbar durch opacity)
-			// Jetzt leicht verzögert sichtbar machen (triggert Transition)
-			requestAnimationFrame(() => overlay.classList.add('visible'));
-		}
-
-		function closeLightbox() {
-			const overlay = document.getElementById('lightboxOverlay');
-			overlay.classList.remove('visible');
-
-			// Warte, bis Fade-out vorbei ist (400ms), dann DOM entfernen
-			setTimeout(() => {
-			overlay.classList.add('hidden');
-			document.getElementById('mediaContainer').innerHTML = '';
-			}, 400);
-		}
-
-		function changeSlide(direction) {
-			currentIndex += direction;
-			if (currentIndex < 0) currentIndex = gallery.length - 1;
-			if (currentIndex >= gallery.length) currentIndex = 0;
-			updateMedia();
-		}
-
-		function updateMedia() {
-			const container = document.getElementById('mediaContainer');
-			const media = gallery[currentIndex];
-			container.innerHTML = '';
-
-			if (media.type === 'image') {
-			const img = document.createElement('img');
-			img.src = media.src;
-			container.appendChild(img);
-			} else if (media.type === 'video') {
-			const video = document.createElement('video');
-			video.src = media.src;
-			video.controls = true;
-			video.autoplay = true;
-			video.muted = true;
-			container.appendChild(video);
-			}
-		}
-
-		document.addEventListener('DOMContentLoaded', () => {
-			// Beispiel-Klick auf ein Projekt
-			document.querySelectorAll('.project-card').forEach(card => {
-				card.addEventListener('click', () => {
-					openLightbox(
-						[
-						{ type: 'image', src: 'https://image.stern.de/34997276/t/vB/v1/w1440/r1.7778/-/amazon-gaming-week-2024-august.jpg' },
-						{ type: 'video', src: 'videos/project1.mp4' },
-						{ type: 'image', src: 'https://image.stern.de/34997276/t/vB/v1/w1440/r1.7778/-/amazon-gaming-week-2024-august.jpg' },
-						],
-						'Mein Projektname',
-						'<span>Programm</span><span>Design</span><span>Online ansehen</span>',
-						'Dies ist eine Galerie mit Medien zu meinem Projekt.'
-					);
-				});
-			});
-
-			// Lightbox schließt bei Klick auf Hintergrund
-			document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
-				const content = document.querySelector('.lightbox-content');
-				if (!content.contains(e.target)) {
-					closeLightbox();
-				}
-			});
-
-			// ESC schließt Lightbox
-			document.addEventListener('keydown', function (e) {
-				if (e.key === 'Escape') {
-					closeLightbox();
-				}
-			});
-		});
-	</script>
 
 	  
-	  
-	  
-	  
-<!-- Projekte scrollen -->
-	<script>
-		let slideIndex = [1, 1, 1, 1, 1, 1, 1];
-		let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7"]
-		showSlides(1, 0);
-		showSlides(1, 1);
-		showSlides(1, 2);
-		showSlides(1, 3);
-		showSlides(1, 4);
-		showSlides(1, 5);
-		showSlides(1, 6);
-
-		function plusSlides(n, no) {
-			showSlides(slideIndex[no] += n, no);
-		}
-
-		function showSlides(n, no) {
-			const slides = document.getElementsByClassName(slideId[no]);
-			const gallery = slides[0]?.closest('.section-background'); // Container finden
-			const prevBtn = gallery?.querySelector('.prev');
-			const nextBtn = gallery?.querySelector('.next');
-
-			if (!slides.length || !gallery) return;
-
-			if (n > slides.length) slideIndex[no] = slides.length;
-			if (n < 1) slideIndex[no] = 1;
-
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";
-			}
-			slides[slideIndex[no] - 1].style.display = "block";
-
-			// Sichtbarkeit der Pfeile anpassen
-			if (slideIndex[no] <= 1) {
-				prevBtn?.classList.remove('visible');
-			} else {
-				prevBtn?.classList.add('visible');
-			}
-
-			if (slideIndex[no] >= slides.length) {
-				nextBtn?.classList.remove('visible');
-			} else {
-				nextBtn?.classList.add('visible');
-			}
-		}
-	</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- Video hover -->
-	<script>
-		document.querySelectorAll('.project-card').forEach(card => {
-			const video = card.querySelector('.video-projects');
-
-			card.addEventListener('mouseenter', () => {
-				if (video) {
-					video.currentTime = 0;     // von vorne beginnen
-					video.play();
-				}
-			});
-
-			card.addEventListener('mouseleave', () => {
-				if (video) {
-					video.pause();
-					video.currentTime = 0;     // zurücksetzen
-				}
-			});
-		});
-	</script>
 	  
 <!-- Lightboxen -->
 	<div id="lightboxOverlay" class="lightbox hidden">
@@ -954,9 +890,11 @@
 	  </div>
 	</div>
 
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script >
 	  AOS.init();
 	</script>
+	<script src="script.js"></script>
 </body>
 </html>
