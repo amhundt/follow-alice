@@ -108,13 +108,41 @@
 <!-- Projekte scrollen -->
 		let slideIndex = [1, 1, 1, 1, 1, 1, 1];
 		let slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7"]
-		showSlides(1, 0);
-		showSlides(1, 1);
-		showSlides(1, 2);
-		showSlides(1, 3);
-		showSlides(1, 4);
-		showSlides(1, 5);
-		showSlides(1, 6);
+
+// Slides dynamisch aufbauen
+function buildSlides() {
+  slideId.forEach((id, no) => {
+    const container = document.querySelector(`.slides-container[data-id="${id}"]`);
+    const allProjects = container?.parentNode.querySelector(".all-projects .project-card");
+
+    if (!container) return;
+
+    container.innerHTML = ""; // alte Slides löschen
+    const projects = container.parentNode.querySelectorAll(".all-projects .project-card");
+    const projectsPerSlide = window.innerWidth <= 600 ? 1 : 3;
+
+    for (let i = 0; i < projects.length; i += projectsPerSlide) {
+      const slide = document.createElement("div");
+      slide.classList.add(id, "fade");
+
+      const grid = document.createElement("div");
+      grid.classList.add("project-grid");
+
+      for (let j = i; j < i + projectsPerSlide && j < projects.length; j++) {
+        grid.appendChild(projects[j].cloneNode(true));
+      }
+
+      slide.appendChild(grid);
+      container.appendChild(slide);
+    }
+    slideIndex[no] = 1; // zurücksetzen
+    showSlides(slideIndex[no], no);
+	
+	// 👉 Swipe für diese Section aktivieren
+    addSwipeSupport(container.parentNode, no);
+  });
+}
+
 
 		function plusSlides(n, no) {
 			showSlides(slideIndex[no] += n, no);
@@ -149,7 +177,40 @@
 				nextBtn?.classList.add('visible');
 			}
 		}
+		
+		
+		
+		// 👉 Swipe-Erkennung hinzufügen
+function addSwipeSupport(sectionEl, no) {
+  let startX = 0;
+  let endX = 0;
 
+  sectionEl.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  sectionEl.addEventListener("touchend", e => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe(startX, endX, no);
+  });
+}
+
+function handleSwipe(startX, endX, no) {
+  const diff = startX - endX;
+  if (Math.abs(diff) > 50) { // mindestens 50px Swipe
+    if (diff > 0) {
+      plusSlides(1, no);  // nach links wischen → nächstes Projekt
+    } else {
+      plusSlides(-1, no); // nach rechts wischen → vorheriges Projekt
+    }
+  }
+}
+
+
+
+// Initialisieren
+window.addEventListener("load", buildSlides);
+window.addEventListener("resize", buildSlides);
 
 
 
@@ -180,6 +241,14 @@
 				}
 			});
 		});
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  
 	  <!-- Formular -->
 document.addEventListener('DOMContentLoaded', function () {
