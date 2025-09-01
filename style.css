@@ -147,17 +147,20 @@ header a:hover{
 }
 
 .vorher-skills-video{
-    max-width: 100%;
+    width: auto;
   height: 90vh;
   margin-bottom: 70px; /* Abstand vom unteren Rand, falls gewünscht */
 	padding-right: 0;
 	padding-left: 0;
 }
 
+/* Burger-Icon */
 .vorher-menu-icon{
-    font-size: 35px;
+    font-size: 28px;
     cursor: pointer;
     display: none;
+	color: var(--corp-white);
+	padding-right: 20px;
 }
 
 .vorher-sidebar{
@@ -520,20 +523,44 @@ h2 {
 	}
 
     .contact-form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 2rem auto;
-    }
+		display: flex;
+  flex-direction: column;    /* alles untereinander */
+  align-items: center;       /* horizontal zentrieren */
+  gap: 15px;                 /* gleichmäßiger Abstand */
+  width: 100%;
+  max-width: 500px;          /* maximale Breite auch am Desktop */
+  margin: 0 auto;            /* zentriert im Container */
+	}
+	
+	/* Jede Form-Gruppe nimmt die volle Breite ein */
+.contact-form .form-group {
+  width: 100%;
+}
+
+/* Labels optional etwas absetzen */
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
 
     .contact-form input,
     .contact-form textarea {
-      padding: 0.7rem;
       border: none;
       border-radius: 4px;
-      font-size: 1rem;
-	  width: 600px;
+	  width: 100%;               /* gleiche Breite */
+  max-width: 100%;           /* nie überlaufen */
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;    /* Padding zählt mit */
     }
+	
+	/* Textarea nur in der Höhe skalierbar */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;         /* optional */
+}
 
     footer {
       text-align: center;
@@ -949,23 +976,16 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
+  width: 100%;
+  margin: auto;
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 600;
 }
 
 input,
@@ -987,11 +1007,13 @@ textarea:focus {
   background: var(--corp-green);
   color: var(--corp-black-dark);
   border: none;
-  padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  margin: auto;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
 }
 
 .contact-btn:hover {
@@ -1048,11 +1070,14 @@ textarea:focus {
   }
 }
 
+/* ---------- MOBILE ---------- */
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+	flex-wrap: wrap; /* damit Logo + Burger oben bleiben */
+  }
+  
+  h2{
+  margin-left: 40px;
   }
 
   nav ul {
@@ -1062,10 +1087,10 @@ textarea:focus {
 
   .section-projects {
     padding: 40px 15px;
+	margin: 0;
   }
 
   .project-card {
-    padding: 10px;
   }
 
   .lightbox-content {
@@ -1094,7 +1119,48 @@ textarea:focus {
 	grid-template-columns: 1fr;
 }
 
+.navigation {
+    position: absolute;
+    top: 60px; /* direkt unter Header */
+    left: 0;
+    width: 90%;
+    background: #111;
+    flex-direction: column;
+    align-items: flex-start;   /* Links bündig statt zentriert */
+    gap: 0;
+    max-height: 0;       /* versteckt */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 20px;     /* Abstand zum Rand */
+  }
 
+.navigation a {
+    display: block;      /* jeder Link eigene Zeile */
+    width: 100%;         /* volle Breite */
+    padding: 12px 0;     /* Abstand oben/unten */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Trennlinie (optional) */
+	padding-left: 30px;
+  }
+  
+  .navigation.active {
+    max-height: 500px; /* sichtbar (passt für 10 Links) */
+  }
+
+  .vorher-menu-icon {
+    display: block; /* Burger nur mobil sichtbar */
+  }
+
+  .vorher-box-icons {
+    display: none; /* optional: Icons ausblenden mobil */
+  }
+  
+  .vorher-skills-video{
+	width: 30vw;
+	height: auto;
+	margin-bottom: 70px; /* Abstand vom unteren Rand, falls gewünscht */
+	padding-right: 0;
+	padding-left: 0;
+	}
 }
 
 

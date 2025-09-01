@@ -308,3 +308,27 @@ window.addEventListener("scroll", () => {
 });
 
 
+
+
+<!-- Mobile Menu -->
+const burger = document.querySelector(".vorher-menu-icon i");
+const nav = document.querySelector(".navigation");
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+
+  // Icon ändern zwischen Menü ☰ und X ✖
+  if (nav.classList.contains("active")) {
+    burger.classList.replace("bx-menu", "bx-x");
+  } else {
+    burger.classList.replace("bx-x", "bx-menu");
+  }
+});
+
+// Menü schließen, wenn man einen Link klickt
+document.querySelectorAll(".navigation a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+    burger.classList.replace("bx-x", "bx-menu");
+  });
+});
