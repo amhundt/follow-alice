@@ -1,0 +1,28 @@
+{
+  "nav_about": "About",
+  "nav_web": "Web",
+  "nav_app": "App",
+  "nav_game": "Gaming",
+  "nav_3dprint": "3D Print",
+  "nav_print": "Print / Design",
+  "nav_video": "Video & Photo",
+  "nav_storytelling": "Storytelling",
+  "nav_methods": "Methods",
+  "nav_contact": "Contact",
+
+  "hero_title": "Hello, I am <span class='vorher-gradient'>Aliki</span>",
+  "hero_subtitle": "Motto: I can do many things, but nothing perfectly. However, I always love learning new stuff.",
+  "contact_button": "Contact Me",
+
+  "about_title": "About Me",
+  "about_text": "[Here you can add your text: your skills, motivation, experience...]",
+  
+  "contact_title": "Contact",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_message": "Message",
+  "contact_submit": "Send",
+  "contact_success": "✅ Thank you! Your message has been sent.",
+
+  "footer_text": "Alice © 2025 - All rights reserved"
+}
