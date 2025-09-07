@@ -28,10 +28,9 @@ html{
     }
 	
 	
-/*	html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}*/
+#lang-de, #lang-en {
+  cursor: pointer;
+}
 	
 	
 	
