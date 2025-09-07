@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ge">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +18,16 @@
 			</div>
 			<!-- Navigation -->
 			<div class="navigation">
-				<a href="#about">About</a>
-				<a href="#web">Web</a>
-				<a href="#app">App</a>
-				<a href="#game">Gaming</a>
-				<a href="#3dprint">3D-Druck</a>
-				<a href="#print">Print / Design</a>
-				<a href="#video">Video & Foto</a>
-				<a href="#storytelling">Storytelling</a>
-				<a href="#methods">Methoden</a>
-				<a href="#contact">Kontakt</a>
+				<a href="#about" data-i18n="nav_about">Über mich</a>
+				<a href="#web" data-i18n="nav_web">Web</a>
+				<a href="#app" data-i18n="nav_app">App</a>
+				<a href="#game" data-i18n="nav_game">Gaming</a>
+				<a href="#3dprint" data-i18n="nav_3dprint">3D-Druck</a>
+				<a href="#print" data-i18n="nav_print">Print / Design</a>
+				<a href="#video" data-i18n="nav_video">Video & Foto</a>
+				<a href="#storytelling" data-i18n="nav_storytelling">Storytelling</a>
+				<a href="#methods" data-i18n="nav_methods">Methoden</a>
+				<a href="#contact" data-i18n="nav_contact">Kontakt</a>
 			</div>
 			
 			
@@ -39,6 +39,12 @@
 				<p><i class='bx bxl-itchio-square'></i></p>
 			</div>
 			
+			<!-- Sprachumschalter -->
+			<div class="language-switcher">
+			  <span onclick="setLanguage('de')" id="lang-de">Deutsch</span> | 
+			  <span onclick="setLanguage('en')" id="lang-en">English</span>
+			</div>
+
 			<!-- Burger Icon -->
 			<div class="vorher-menu-icon">
                 <i class='bx bx-menu'></i>
@@ -56,9 +62,13 @@
 				<div class="vorher-hero-info-title">Developer Portfolio
 				</div>
 				
-				<h1 class="vorher-text-vor-bild" data-aos="fade-right" data-aos-duration="2000">Hallo, ich bin <span class="vorher-gradient">Aliki</span></h1>
-				<p class="vorher-text-vor-bild">Motto: Ich kann vieles, aber nichts richtig. Dafür lerne ich immer gerne neues dazu.</p>
-				<a href="#contact" class="contact-button">Contact Me</a>
+
+				<!-- Hero -->
+				<h1 class="vorher-text-vor-bild" data-aos="fade-right" data-aos-duration="2000" data-i18n="hero_title">Hallo, ich bin <span class="vorher-gradient">Aliki</span></h1>
+				<p class="vorher-text-vor-bild" data-i18n="hero_subtitle">Motto: Ich kann vieles, aber nichts richtig. Dafür lerne ich immer gerne neues dazu.</p>
+				<a href="#contact" class="contact-button" data-i18n="contact_button">Contact Me</a>
+				
+				
 				
 			</div>
 			
@@ -73,10 +83,13 @@
 	  
 	  <!-- About -->
 		<section class="section-projects" id="about">
-			<h2>Über mich</h2>
-			<p>
-			[Hier kannst du deinen Text einfügen: Deine Skills, Motivation, Erfahrungen...]
-			</p>
+
+
+			<h2 data-i18n="about_title">Über mich</h2>
+				<div class="section-background">
+					<p data-i18n="about_text">[Hier kannst du deinen Text einfügen: Deine Skills, Motivation, Erfahrungen...]</p>
+				</div>
+			
 		</section>
 		  
 		 
@@ -410,28 +423,27 @@
 
 <!-- Kontakt -->
 <section class="contact-section" id="contact">
-  <h2>Kontakt</h2>
+  <h2 data-i18n="contact_title">Kontakt</h2>
   <form class="contact-form" action="https://formspree.io/f/mblkzpan" method="POST">
     <div class="form-group">
-      <label for="name">Name</label>
+      <label for="name" data-i18n="contact_name">Name</label>
       <input type="text" id="name" name="name" required placeholder="Dein Name">
     </div>
 
     <div class="form-group">
-      <label for="email">E-Mail</label>
+      <label for="email" data-i18n="contact_email">E-Mail</label>
       <input type="email" id="email" name="email" required placeholder="deine@email.de">
     </div>
 
     <div class="form-group">
-      <label for="message">Nachricht</label>
+      <label for="message" data-i18n="contact_message">Nachricht</label>
       <textarea id="message" name="message" rows="6" required placeholder="Deine Nachricht..."></textarea>
     </div>
 
-    <button type="submit" class="contact-btn">Absenden</button>
+    <button type="submit" class="contact-btn" data-i18n="contact_submit">Absenden</button>
   </form>
   
-  <p class="form-success-message" style="display: none;">✅ Vielen Dank! Deine Nachricht wurde gesendet.</p>
-
+  <p class="form-success-message" style="display: none;" data-i18n="contact_success">✅ Vielen Dank! Deine Nachricht wurde gesendet.</p>
 </section>
 
 
@@ -443,7 +455,7 @@
 <!-- Footer -->
 	<footer class="site-footer">
   <div class="footer-bottom">
-    <p>Alice &copy; 2025 - All rights reserved</p>
+    <p data-i18n="footer_text">Alice © 2025 - Alle Rechte vorbehalten</p>
   </div>
 </footer>
 

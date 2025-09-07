@@ -28,7 +28,10 @@ html{
     }
 	
 	
-	
+/*	html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}*/
 	
 	
 	
@@ -1074,11 +1077,16 @@ textarea:focus {
 @media (max-width: 600px) {
   header {
 	flex-wrap: wrap; /* damit Logo + Burger oben bleiben */
+	padding: 0px;
   }
   
   h2{
   margin-left: 40px;
   }
+
+.contact-section h2{
+	margin-left: 0px;
+}
 
   nav ul {
     flex-direction: column;
@@ -1086,7 +1094,7 @@ textarea:focus {
   }
 
   .section-projects {
-    padding: 40px 15px;
+    padding: 40px 0px;
 	margin: 0;
   }
 
@@ -1117,13 +1125,14 @@ textarea:focus {
 
 .project-grid {
 	grid-template-columns: 1fr;
+	padding: 0;
 }
 
 .navigation {
     position: absolute;
     top: 60px; /* direkt unter Header */
     left: 0;
-    width: 90%;
+    width: 100%;
     background: #111;
     flex-direction: column;
     align-items: flex-start;   /* Links bündig statt zentriert */
@@ -1131,7 +1140,6 @@ textarea:focus {
     max-height: 0;       /* versteckt */
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    padding: 0 20px;     /* Abstand zum Rand */
   }
 
 .navigation a {
@@ -1139,7 +1147,7 @@ textarea:focus {
     width: 100%;         /* volle Breite */
     padding: 12px 0;     /* Abstand oben/unten */
     border-bottom: 1px solid rgba(255,255,255,0.1); /* Trennlinie (optional) */
-	padding-left: 30px;
+	padding-left: 14px;
   }
   
   .navigation.active {
@@ -1155,12 +1163,39 @@ textarea:focus {
   }
   
   .vorher-skills-video{
-	width: 30vw;
+	width: 40vw;
 	height: auto;
 	margin-bottom: 70px; /* Abstand vom unteren Rand, falls gewünscht */
-	padding-right: 0;
-	padding-left: 0;
 	}
+	
+	.vorher-skills-video-box{
+	  right: 10%;
+	  transform: translateX(-10%);
+	  width: auto;
+	  height: auto;
+	}
+	
+	.section-background
+	{
+		padding: 0px 40px;
+		border-radius: 0;
+	}
+	
+	.contact-form
+	{
+		max-width: inherit;
+	}
+	
+	.contact-section {
+padding: 0 40px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  padding: 30px 15px;
+}
+
+
 }
 
 

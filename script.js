@@ -332,3 +332,40 @@ document.querySelectorAll(".navigation a").forEach(link => {
     burger.classList.replace("bx-x", "bx-menu");
   });
 });
+
+
+
+
+
+
+let currentLang = "de";
+
+// Sprache laden
+async function setLanguage(lang) {
+  const res = await fetch(`lang/${lang}.json`);
+  const dict = await res.json();
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) {
+      // Falls HTML im Text erlaubt ist (für <span> im Hero)
+      el.innerHTML = dict[key];
+    }
+  });
+
+  currentLang = lang;
+
+  // Aktive Sprache hervorheben
+  document.getElementById("lang-de").style.fontWeight = (lang === "de") ? "bold" : "normal";
+  document.getElementById("lang-en").style.fontWeight = (lang === "en") ? "bold" : "normal";
+}
+
+// Automatische Spracherkennung beim Laden
+window.addEventListener("DOMContentLoaded", () => {
+  const userLang = navigator.language || navigator.userLanguage;
+  if (userLang.startsWith("de")) {
+    setLanguage("de");
+  } else {
+    setLanguage("en");
+  }
+});
